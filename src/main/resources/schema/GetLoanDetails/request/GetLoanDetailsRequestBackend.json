@@ -1,0 +1,12 @@
+{
+	"GetLoanDetailsRequest": {
+		"CustomerInfo": {
+			"fullname": "string",
+			"phoneNumber": "string",
+			"emailAddress": "string"
+		},
+		"LoanAccountInfo": {
+			"accountNumber": 0
+		}
+	}
+}

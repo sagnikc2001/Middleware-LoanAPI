@@ -1,0 +1,26 @@
+{
+  "GetLoanDetailsResponse" : {
+    "PersonalInfo" : {
+      "fullName": "string",
+      "AddressInfo" : {
+        "location": "string",
+        "city": "string",
+        "state": "string",
+        "pinCode": "string",
+        "region": "string"
+      },
+      "phoneNumber": "string",
+      "emailAddress": "string",
+      "annualSalary": 0
+    },
+    "LoanInfo" : {
+      "accountNumber" : 0,
+      "status" : "string",
+      "interestRate" : 0,
+      "loanAmount": 0,
+      "loanTerm": 0,
+      "loanType": "string",
+      "creditScore": 0
+    }
+  }
+}

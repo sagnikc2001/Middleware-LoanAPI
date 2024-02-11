@@ -1,0 +1,163 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "DB Loan API",
+    "description": "DB API for managing Loan Applications and Details",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/v1/NewLoanApplication": {
+      "post": {
+        "tags": ["DB Loan API"],
+        "summary": "Submit a new loan application",
+        "requestBody": {
+          "description": "Loan application details",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLoanApplicationDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Loan application status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewLoanApplicationStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/GetLoanDetails": {
+      "post": {
+        "tags": ["DB Loan API"],
+        "summary": "Get loan details",
+        "requestBody": {
+          "description": "Loan details request",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Loan details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NewLoanApplicationDetails": {
+        "type": "object",
+        "properties": {
+          "NewLoanApplicationDetails": {
+            "$ref": "#/components/schemas/NewLoanApplicationDetailsProperties"
+          }
+        }
+      },
+      "NewLoanApplicationDetailsProperties": {
+        "type": "object",
+        "properties": {
+          "fullName": { "type": "string" },
+          "location": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "pinCode": { "type": "string" },
+          "region": { "type": "string" },
+          "phoneNumber": { "type": "string" },
+          "emailAddress": { "type": "string" },
+          "annualSalary": { "type": "number" },
+          "loanAmount": { "type": "number" },
+          "loanTerm": { "type": "number" },
+          "loanType": { "type": "string" },
+          "creditScore": { "type": "number" },
+          "interestRate": { "type": "number" },
+          "status": { "type": "string" }
+        }
+      },
+      "NewLoanApplicationStatus": {
+        "type": "object",
+        "properties": {
+          "NewLoanApplicationStatus": {
+            "$ref": "#/components/schemas/NewLoanApplicationStatusProperties"
+          }
+        }
+      },
+      "NewLoanApplicationStatusProperties": {
+        "type": "object",
+        "properties": {
+          "accountNumber": { "type": "number" },
+          "loanAmount": { "type": "number" },
+          "interestRate": { "type": "number" },
+          "status": { "type": "string" }
+        }
+      },
+      "LoanDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "LoanDetailsRequest": {
+            "$ref": "#/components/schemas/LoanDetailsRequestProperties"
+          }
+        }
+      },
+      "LoanDetailsRequestProperties": {
+        "type": "object",
+        "properties": {
+          "fullName": { "type": "string" },
+          "phoneNumber": { "type": "string" },
+          "emailAddress": { "type": "string" },
+          "accountNumber": { "type": "number" }
+        }
+      },
+      "LoanDetails": {
+        "type": "object",
+        "properties": {
+          "LoanDetails": {
+            "$ref": "#/components/schemas/LoanDetailsProperties"
+          }
+        }
+      },
+      "LoanDetailsProperties": {
+        "type": "object",
+        "properties": {
+          "accountNumber": { "type": "number" },
+          "fullName": { "type": "string" },
+          "location": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "pinCode": { "type": "string" },
+          "region": { "type": "string" },
+          "phoneNumber": { "type": "string" },
+          "emailAddress": { "type": "string" },
+          "annualSalary": { "type": "number" },
+          "loanAmount": { "type": "number" },
+          "loanTerm": { "type": "number" },
+          "loanType": { "type": "string" },
+          "creditScore": { "type": "number" },
+          "interestRate": { "type": "number" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  }
+}

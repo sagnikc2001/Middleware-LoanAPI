@@ -1,0 +1,10 @@
+{
+  "NewLoanApplicationResponse": {
+    "status": "string",
+    "LoanAccountDetails": {
+      "accountNumber": "string",
+      "interestRate": 0,
+      "loanAmount": 0
+    }
+  }
+}
